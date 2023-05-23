@@ -10,11 +10,12 @@ class query extends Conexion {
         $precio = $_GET['precio'];
         $image = $_GET['imageUrl'];
         $talla = $_GET['talla'];
+        $existencia = $_GET['existencia'];
         $tags = strtolower($description);
         try {
             $conexion = parent::conectar();
             $query = new MongoDB\Driver\BulkWrite;
-            $query->insert(['title'=>$title, 'description'=>$description, 'categorySex'=>$sex, 'precio'=>floatval($precio), 'imageUrl'=>$image, 'categoryID'=>$categoryID, 'talla'=>$talla, 'tags' => $tags]);
+            $query->insert(['title'=>$title, 'description'=>$description, 'categorySex'=>$sex, 'precio'=>floatval($precio), 'imageUrl'=>$image, 'categoryID'=>$categoryID, 'talla'=>$talla, 'tags' => $tags, 'existencia' => floatval($existencia)]);
             $conexion->executeBulkWrite($this->database_name.$this->col_products, $query);
         } catch (\Throwable $th) {
             return $th->getMessage();
