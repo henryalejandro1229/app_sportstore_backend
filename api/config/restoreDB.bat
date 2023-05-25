@@ -1,3 +1,3 @@
 @echo off
-mongorestore --uri mongodb+srv://sastrerialospajaritos:fUIRMRzwPDAtkV9u@cluster43000.2ddxg0t.mongodb.net
+mongorestore --uri mongodb+srv://sportstore96:PIa0yZNwzNXaAqsD@sportstore.zymoner.mongodb.net/?retryWrites=true&w=majority
 exit
